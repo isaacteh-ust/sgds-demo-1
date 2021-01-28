@@ -2,8 +2,6 @@
 title: Customise SGDS with Sass
 layout: layout-sidenav
 permalink: /docs/customise-sgds/
-redirect_from:
-    - /contents/docs/customise-sgds
 ---
 
 <h2>Overview</h2>

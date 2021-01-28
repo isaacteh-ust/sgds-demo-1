@@ -4,7 +4,6 @@ layout: layout-sidenav
 permalink: /docs/getting-started/
 redirect_from:
     - /docs/
-    - /contents/docs/getting-started
 ---
 Overview
 --------
