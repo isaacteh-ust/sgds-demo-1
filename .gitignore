@@ -6,7 +6,7 @@ _site
 .vscode
 .images/
 *.tar.gz
-
+.github
 node_modules
 
 /scripts
