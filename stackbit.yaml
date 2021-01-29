@@ -147,8 +147,8 @@ models:
       - type: string
         name: permalink
         label: permalink
-        default: /docs/{slug}
-        required: true  
+        const: /collections/_standard/lorem-ipsum
+        required: true
       - type: string
         name: layout
         label: Docs Layout
