@@ -155,6 +155,8 @@ models:
         const: layout-docs
         required: true
         hidden: true
+      - type: string
+        name: redirect_from  
   form:
     type: page
     label: Form
