@@ -145,6 +145,11 @@ models:
         label: Title
         required: true
       - type: string
+        name: permalink
+        label: permalink
+        default: /docs/{slug}
+        required: true  
+      - type: string
         name: layout
         label: Docs Layout
         const: layout-docs
