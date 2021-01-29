@@ -65,10 +65,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 4.0)
+  jekyll (~> 3.8.4)
   jekyll-redirect-from (~> 0.16)
   jekyll-seo-tag (~> 2.6)
   tzinfo-data
 
 BUNDLED WITH
-   2.1.4
+   2.2.5

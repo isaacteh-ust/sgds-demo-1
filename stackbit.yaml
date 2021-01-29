@@ -137,7 +137,7 @@ models:
   standard:
     type: page
     label: Standard
-    urlPath: '/docs/{slug}'
+    urlPath: '/collections/_standard/{slug}'
     folder: collections/_standard
     fields:
       - type: string
@@ -145,13 +145,13 @@ models:
         label: Title
         required: true
       - type: string
-        name: permalink  
-      - type: string
         name: layout
         label: Docs Layout
         const: layout-docs
         required: true
         hidden: true
+      - type: string
+        name: redirect_from  
   form:
     type: page
     label: Form
