@@ -4,7 +4,7 @@ ssgVersion: 3.8.4
 buildCommand: jekyll build
 publishDir: _site
 staticDir: ''
-uploadDir: 'assets/img'
+uploadDir: '/assets/img'
 dataDir: '_data'
 pagesDir: ''
 models:                       
@@ -20,6 +20,9 @@ models:
       - type: image
         name: logo
         label: Logo
+      - type: image
+        name: nav_logo
+        label: Nav Logo        
       - type: string
         name: report_vulnerability
       - type: string
@@ -71,7 +74,7 @@ models:
           - type: string
             name: others_2
           - type: string
-            name: others_2_link  
+            name: others_2_link     
   navigation:
     type: data
     label: Navigation
@@ -104,7 +107,7 @@ models:
                     - type: string
                       name: title
                     - type: string
-                      name: url            
+                      name: url                                
   patterns:
     type: page
     label: Patterns
@@ -134,29 +137,81 @@ models:
   standard:
     type: page
     label: Standard
+    urlPath: '/collections/_standard/{slug}'
     folder: collections/_standard
     fields:
       - type: string
         name: title
+        label: Title
+        required: true
       - type: string
-        name: layout                     
-  docs:
+        name: layout
+        label: Docs Layout
+        const: layout-docs
+        required: true
+        hidden: true
+  form:
     type: page
-    label: Docs
-    folder: contents/docs
+    label: Form
+    folder: collections/_form
     fields:
       - type: string
         name: title
       - type: string
+        name: layout 
+      - type: string
+        name: order 
+  helpers:
+    type: page
+    label: Helpers
+    folder: collections/_helpes
+    fields:
+      - type: string
+        name: title
+      - type: string
+        name: layout       
+  generalcollection:
+    type: page
+    label: Collection General
+    folder: collections/_general
+    fields:
+      - type: string
+        name: title
+      - type: string
+        name: layout 
+      - type: string
+        name: category 
+  guidescollection:
+    type: page
+    label: Collection Guides
+    folder: collections/_guides
+    fields:
+      - type: string
+        name: title
+      - type: string
+        name: layout 
+      - type: string
+        name: category                                              
+  docs:
+    type: page
+    urlPath: '/docs/{slug}'
+    label: Docs
+    folder: docs
+    fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: string
         name: layout
-      - type: string
-        name: permalink
-      - type: string
-        name: redirect_from
+        label: Docs Layout
+        const: layout-docs
+        required: true
+        hidden: true
   general:
     type: page
+    urlPath: '/contents/general/{slug}'
     label: General
-    layout: layout-post
     folder: contents/general
     fields:
       - type: string
@@ -165,10 +220,16 @@ models:
         name: subtitle
       - type: string
         name: layout
+        label: general layout
+        const: layout-post
+        required: true
+        hidden: true        
+      - type: string
+        name: category
       - type: string
         name: permalink
       - type: string
-        name: category
+        name: redirect_from    
   guides:
     type: page
     label: Guides
@@ -179,8 +240,6 @@ models:
         name: title
       - type: string
         name: layout        
-      - type: string
-        name: permalink
       - type: boolean
         name: nodropdown        
       - type: string
@@ -242,9 +301,6 @@ models:
         label: Title
         description: About Page.
       - type: string
-        name: permalink
-        label: Permalink
-      - type: string
         name: header
         label: Header
       - type: string
@@ -271,7 +327,7 @@ models:
         label: Content Intro Decsription
       - type: string
         name: content_intro_button_link
-        labe: Content Intro Button Link
+        label: Content Intro Button Link
       - type: image
         name: content_intro_img
         label: Content Intro Image
@@ -353,3 +409,4 @@ models:
         name: section_2
       - type: string
         name: section_2_button                        
+
