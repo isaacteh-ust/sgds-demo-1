@@ -145,6 +145,8 @@ models:
         label: Title
         required: true
       - type: string
+        name: permalink  
+      - type: string
         name: layout
         label: Docs Layout
         const: layout-docs
