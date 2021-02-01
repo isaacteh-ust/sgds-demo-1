@@ -3,7 +3,7 @@ description: >-
   Design System unites Singapore Government digital services around a common
   visual language  and user experience
 visit_docs_section:
-  button_color: danger
+  button_color: white
   button_type: rounded
   text_color: white
   background: primary 

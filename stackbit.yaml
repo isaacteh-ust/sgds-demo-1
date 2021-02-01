@@ -63,6 +63,8 @@ models:
               - success
               - warning
               - danger
+            default: white
+            required: true               
           - type: enum
             name: button_type
             label: Button Types
@@ -70,6 +72,8 @@ models:
               - primary
               - outlined
               - rounded 
+            default: rounded
+            required: true               
           - type: enum
             name: text_color
             label: Text Color
@@ -85,6 +89,8 @@ models:
               - success
               - warning 
               - danger
+            default: white
+            required: true 
           - type: enum
             name: background
             label: Background Color
@@ -100,6 +106,8 @@ models:
               - success
               - warning 
               - danger
+            default: primary
+            required: true               
       - type: object
         name: breadcrumb
         fields:
@@ -118,24 +126,8 @@ models:
               - success
               - warning 
               - danger
-      - type: object
-        name: breadcrumb
-        fields:
-          - type: enum
-            name: background
-            label: Background
-            options:
-              - white
-              - black
-              - light
-              - dark
-              - primary
-              - secondary
-              - link
-              - info
-              - success
-              - warning 
-              - danger 
+            default: primary
+            required: true  
           - type: enum
             name: text_color
             label: Text Color
@@ -150,7 +142,9 @@ models:
               - info
               - success
               - warning 
-              - danger                              
+              - danger
+            default: white
+            required: true                                             
         - type: object
         name: footer
         label: Footer
