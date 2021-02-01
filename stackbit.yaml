@@ -111,6 +111,7 @@ models:
         options:
           - primary
           - secondary 
+          - red
         default: primary   
         required: true                                             
       - type: object
