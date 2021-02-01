@@ -1,0 +1,5 @@
+visit_docs_section:
+  button_color: white
+  button_type: outlined
+  text_color: white
+  background: primary  

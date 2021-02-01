@@ -83,11 +83,20 @@ a[target="_blank"]:after {
   will-change: position, transform;
 }
 
-.has-background-gradient {
+.has-background-gradient-primary {
   background: rgb(96, 55, 179);
   background: linear-gradient(
     30deg,
     rgba(96, 55, 179, 1) 0%,
+    rgba(70, 117, 211, 1) 100%
+  );
+}
+
+.has-background-gradient-secondary {
+  background: rgb(55, 94, 179);
+  background: linear-gradient(
+    30deg,
+    rgb(55, 94, 179) 0%,
     rgba(70, 117, 211, 1) 100%
   );
 }
