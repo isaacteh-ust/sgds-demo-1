@@ -45,44 +45,23 @@ models:
         name: last_updated                                        
       - type: string
         name: search_placeholder             
-      - type: object
+      - type: enum
         name: breadcrumb
-        label: Breadcrumb
-        fields:
-          - type: enum
-            name: background
-            label: Background Color
-            options:
-              - white
-              - black
-              - light
-              - dark
-              - primary
-              - secondary
-              - link
-              - info
-              - success
-              - warning 
-              - danger
-            default: primary
-            required: true  
-          - type: enum
-            name: text_color
-            label: Text Color
-            options:
-              - white
-              - black
-              - light
-              - dark
-              - primary
-              - secondary
-              - link
-              - info
-              - success
-              - warning 
-              - danger
-            default: white
-            required: true                                             
+        label: Breadcrumb Background Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true                                             
       - type: object
         name: footer
         label: Footer
