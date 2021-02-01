@@ -6,8 +6,10 @@ visit_docs_section:
   button_color: white
   button_type: rounded
   text_color: white
+  background: primary 
+breadcrumb: secondary  
+breadcrumb1:   
   background: primary
-breadcrumb: secondary
 logo: assets/img/logo_sgds.png
 nav_logo: /assets/img/logo-sgds.svg
 sgds-version: 1.3.17
