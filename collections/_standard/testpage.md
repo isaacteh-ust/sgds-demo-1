@@ -1,5 +1,5 @@
 ---
-title: lorem-ipsum
+title: test
 layout: layout-docs
 permalink: /docs/test
 ---
