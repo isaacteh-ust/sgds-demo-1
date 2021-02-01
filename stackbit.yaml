@@ -44,16 +44,75 @@ models:
       - type: string
         name: last_updated                                        
       - type: string
-        name: search_placeholder       
-      - type: object
-        name: breadcrumb1 
-        fields:       
-          - type: enum
-            name: background
-            label: Breadcrumb Background Color
-            options:
-              - primary
-              - secondary                                        
+        name: search_placeholder
+      - type: enum
+        name: visit_docs_section_button_color
+        label: Button Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning
+          - danger
+        default: white
+        required: true               
+      - type: enum
+        name: visit_docs_section_button_type
+        label: Button Types
+        options:
+          - primary
+          - outlined
+          - rounded 
+        default: rounded
+        required: true               
+      - type: enum
+        name: visit_docs_section_text_color
+        label: Text Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: white
+        required: true 
+      - type: enum
+        name: visit_docs_section_background
+        label: Background Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true               
+      - type: enum
+        name: breadcrumb_background
+        label: Breadcrumb Background Color
+        options:
+          - primary
+          - secondary 
+        default: primary   
+        required: true                                             
       - type: object
         name: footer
         label: Footer
