@@ -145,7 +145,7 @@ models:
               - danger
             default: white
             required: true                                             
-        - type: object
+      - type: object
         name: footer
         label: Footer
         fields:
