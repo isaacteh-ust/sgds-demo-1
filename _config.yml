@@ -5,7 +5,7 @@ description: >-
 visit_docs_section_button_color: white
 visit_docs_section_button_type: rounded
 visit_docs_section_text_color: white
-visit_docs_section_background: primary
+visit_docs_section_background: danger
 breadcrumb_background: primary
 logo: assets/img/logo_sgds.png
 nav_logo: /assets/img/logo-sgds.svg
