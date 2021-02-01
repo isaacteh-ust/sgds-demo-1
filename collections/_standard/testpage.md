@@ -1,11 +1,10 @@
 ---
-title: Demo
+title: lorem-ipsum
 layout: layout-docs
 ---
-## Demo Page
+## Lorem ipsum
 
 Lorem ipsum dolor sit amet, **consectetur adipiscing elit**, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-*   Lorem ipsum
-*   dolor sit amet
-*   Testing123
+- Lorem ipsum
+- dolor sit amet
