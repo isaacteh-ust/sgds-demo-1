@@ -1,6 +1,7 @@
 ---
 title: lorem-ipsum
 layout: layout-docs
+permalink: /docs/
 ---
 ## Lorem ipsum
 
