@@ -138,12 +138,15 @@ models:
     type: page
     label: Standard
     urlPath: '/collections/_standard/{slug}'
-    folder: collections/_standard
+    filePath: 'collections/_standard/{slug}.md'
     fields:
       - type: string
         name: title
         label: Title
         required: true
+      - type: string
+        name: permalink
+        label: Permalink  
       - type: string
         name: layout
         label: Docs Layout
@@ -151,7 +154,7 @@ models:
         required: true
         hidden: true
       - type: string
-        name: redirect_from  
+        name: redirect_from
   form:
     type: page
     label: Form
