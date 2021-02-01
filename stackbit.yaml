@@ -49,17 +49,8 @@ models:
         name: breadcrumb
         label: Breadcrumb Background Color
         options:
-          - white
-          - black
-          - light
-          - dark
           - primary
           - secondary
-          - link
-          - info
-          - success
-          - warning 
-          - danger
         default: primary
         required: true                                             
       - type: object
