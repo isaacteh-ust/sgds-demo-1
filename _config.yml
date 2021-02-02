@@ -5,7 +5,7 @@ description: >-
 visit_docs_section_button_color: white
 visit_docs_section_button_type: rounded
 visit_docs_section_text_color: white
-visit_docs_section_background: success
+visit_docs_section_background: warning
 breadcrumb_background: red
 home_intro_button_color: danger
 home_intro_button_type: rounded
