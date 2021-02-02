@@ -114,34 +114,194 @@ models:
           - red
         default: primary   
         required: true     
-      - type: object
-        name: feedback
-        label: Feedback
-        fields:
-          - type: enum
-            name: feedback_button_color
-            options:
-              - white
-              - black
-              - light
-              - dark
-              - primary
-              - secondary
-              - link
-              - info
-              - success
-              - warning 
-              - danger
-            default: danger
-            required: true  
-          - type: enum
-            name: feedback_button_type  
-            options:
-              - primary
-              - outlined
-              - rounded 
-            default: rounded
-            required: true 
+      - type: enum
+        name: feedback_button_color
+        label: Feedback Button Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true  
+      - type: enum
+        name: feedback_button_type  
+        label: Feedback Button Type
+        options:
+          - primary
+          - outlined
+          - rounded 
+        default: rounded
+        required: true 
+      - type: enum
+        name: home_intro_button_color
+        label: Home Page Intro Button Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true  
+      - type: enum
+        name: home_intro_button_type  
+        label: Home Page Intro Button Type
+        options:
+          - primary
+          - outlined
+          - rounded 
+        default: rounded
+        required: true 
+      - type: enum
+        name: home_intro_background_color
+        label: Home Page Intro BG Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true 
+      - type: enum
+        name: home_section_button_type  
+        label: Home Section Button Type
+        options:
+          - primary
+          - outlined
+          - rounded 
+        default: rounded
+        required: true 
+      - type: enum
+        name: home_section_button_color
+        label: Home Section Button Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true  
+      - type: enum
+        name: home_footer_section_background_color
+        label: Home Foot Section BG Color
+        options:
+          - primary
+          - red
+        default: primary
+        required: true    
+      - type: enum
+        name: navbar_border_color
+        label: Navbar Border Color
+        options:
+          - purple
+          - red
+        default: red
+        required: true 
+      - type: enum
+        name: navbar_button_type  
+        label: Navbar Button Type
+        options:
+          - primary
+          - outlined
+          - rounded 
+        default: rounded
+        required: true 
+      - type: enum
+        name: navbar_button_color
+        label: Navbar Button Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true 
+      - type: enum
+        name: footer_text_color
+        label: Footer Text Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: white
+        required: true
+      - type: enum
+        name: footer_background
+        label: Footer BG Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: dark
+        required: true   
+      - type: enum
+        name: footer_bottom-section_background
+        label: Footer Bottom Section BG Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: black
+        required: true   
       - type: object
         name: footer
         label: Footer
