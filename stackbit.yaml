@@ -113,7 +113,35 @@ models:
           - secondary 
           - red
         default: primary   
-        required: true                                             
+        required: true     
+      - type: object
+        name: feedback
+        label: Feedback
+        fields:
+          - type: enum
+            name: feedback_button_color
+            options:
+              - white
+              - black
+              - light
+              - dark
+              - primary
+              - secondary
+              - link
+              - info
+              - success
+              - warning 
+              - danger
+            default: danger
+            required: true  
+          - type: enum
+            name: feedback_button_type  
+            options:
+              - primary
+              - outlined
+              - rounded 
+            default: rounded
+            required: true 
       - type: object
         name: footer
         label: Footer

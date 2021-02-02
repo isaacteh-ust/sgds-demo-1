@@ -1,7 +1,7 @@
 <div class="masthead-container is-fixed has-background-white" id="navbar" style="z-index:50;">
     {% include sgds-masthead.html %}
     <div class="sgds-container ">
-        <nav class="sgds-navbar" role="navigation">
+        <nav class="sgds-navbar has-background-white" role="navigation">
             <div class="sgds-navbar-brand">
                 <a class="sgds-navbar-item" href="/">
                     <img src="{{ site.nav_logo }}" alt="Design System Logo" />
@@ -24,7 +24,7 @@
                             {%- assign class = 'is-active' -%} 
                         {%- endif -%}
                     <a
-                        class="sgds-navbar-item is-uppercase {{class}} has-text-weight-semibold is-tab has-background-white"
+                        class="sgds-navbar-item {{site.navbar_border_color }} is-uppercase {{class}} has-text-weight-semibold is-tab"
                         href="{{ lvl1item.url }} " target="{{lvl1item.target}}"
                     >
                         {{ lvl1item.title }}

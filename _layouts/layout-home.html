@@ -3,7 +3,7 @@ layout: layout-default
 ---
 
 <section class="sgds-section hide-element" style="padding-top:24px;">
-    <div class="header_bg"></div>
+    <div class="header_bg has-background-{{ site.home_intro_background_color}}"></div>
     <div class="sgds-container">
         <div class="content">
             <div class="row">
@@ -21,7 +21,7 @@ layout: layout-default
                         <br />
                     {{ page.content_intro_description }}
                     </p>
-                    <a href="/docs/" class="sgds-button is-rounded is-primary">{{ page.content_intro_button_link }}</a>
+                    <a href="/docs/" class="sgds-button is-{{ site.home_intro_button_type }} is-{{ site.home_intro_button_color }} ">{{ page.content_intro_button_link }}</a>
                 </div>
 
                 <div class="col">
@@ -145,7 +145,7 @@ layout: layout-default
             </div>
             <div class="row has-text-centered">
                 <div class="col margin--top--lg">
-                    <a class="sgds-button is-primary is-rounded" role="button" href={{ page.button_1_link }}>
+                    <a class="sgds-button is-{{site.home_section_button_color}} is-{{site.home_section_button_type}}" role="button" href={{ page.button_1_link }}>
                         {{ page.button_1 }}</a
                     >
                 </div>
@@ -154,7 +154,7 @@ layout: layout-default
     </div>
 </section>
 
-<section class="sgds-section has-background-gradient">
+<section class="sgds-section has-background-gradient-{{ site.home_foot_section_background_color }}">
     <div class="sgds-container">
         <div class="content has-text-white">
             <div class="row has-text-centered">
