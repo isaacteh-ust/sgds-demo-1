@@ -5,14 +5,13 @@ description: >-
 visit_docs_section_button_color: white
 visit_docs_section_button_type: rounded
 visit_docs_section_text_color: white
-visit_docs_section_background: danger
+visit_docs_section_background: primary
 breadcrumb_background: red
 home_intro_button_color: danger
 home_intro_button_type: rounded
 home_intro_background_color: danger
 home_section_button_color: danger
 home_section_button_type: rounded
-
 home_footer_section_background_color: red
 navbar_border_color: red
 navbar_button_color: danger
@@ -20,7 +19,6 @@ navbar_button_type: rounded
 footer_text_color: white
 footer_background: dark
 footer_bottom-section_background: black
-
 feedback_button_color: primary
 feedback_button_type: rounded
 logo: assets/img/logo_sgds.png
