@@ -6,7 +6,7 @@ visit_docs_section_button_color: white
 visit_docs_section_button_type: rounded
 visit_docs_section_text_color: white
 visit_docs_section_background: primary
-breadcrumb_background: red
+breadcrumb_background: primary
 home_intro_button_color: danger
 home_intro_button_type: rounded
 home_intro_background_color: danger
