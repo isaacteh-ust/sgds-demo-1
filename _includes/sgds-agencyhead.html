@@ -24,7 +24,7 @@
                             {%- assign class = 'is-active' -%} 
                         {%- endif -%}
                     <a
-                        class="sgds-navbar-item is-uppercase {{class}} has-text-weight-semibold is-tab"
+                        class="sgds-navbar-item is-uppercase {{class}} has-text-weight-semibold is-tab has-background-white"
                         href="{{ lvl1item.url }} " target="{{lvl1item.target}}"
                     >
                         {{ lvl1item.title }}
@@ -58,7 +58,7 @@
                                 <img src="/assets/img/GitHub-Mark-64px.png" alt="GitHub" />
                             </a>
                             <a
-                                class="sgds-button is-primary is-rounded is-small"
+                                class="sgds-button is-{{site.navbar_button_color }} is-{{site.navbar_button_type}} is-small"
                                 href="/docs/installation/"
                             >
                                 Install Design System
