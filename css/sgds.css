@@ -9372,9 +9372,14 @@ a.sgds-navbar-item {
 a.sgds-navbar-item.is-active,
 a.sgds-navbar-item:focus,
 a.sgds-navbar-item:focus-within,
-a.sgds-navbar-item:hover {
+a.sgds-navbar-item.purple:hover {
 	background-color: transparent;
 	color: #6037b3
+}
+
+a.sgds-navbar-item.red:hover {
+	background-color: transparent;
+	color: #d0021b
 }
 
 .sgds-navbar-item {
