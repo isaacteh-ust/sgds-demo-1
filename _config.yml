@@ -107,3 +107,4 @@ sass:
 baseurl: ''
 url: ''
 home_intro_background_color: danger
+home_intro_button_color: danger
