@@ -161,7 +161,7 @@ models:
               - success
               - warning 
               - danger
-            default: primary             
+            default: primary       
           - type: enum
             name: home_intro_button_type  
             label: Home Page Intro Button Type
