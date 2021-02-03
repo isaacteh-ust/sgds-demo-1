@@ -146,8 +146,6 @@ models:
         description: Site parameters
         required: true
         fields:
-          - type: string
-            name: description
           - type: enum
             name: home_intro_button_color
             label: Home Page Intro Button Color
