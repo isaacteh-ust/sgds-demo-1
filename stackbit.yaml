@@ -90,7 +90,7 @@ models:
               - success
               - warning 
               - danger
-            default: primary             
+            default: primary
       - type: object
         name: footer
         label: Footer
