@@ -12,7 +12,7 @@ home_intro_button_color: primary
 home_intro_button_type: rounded
 home_section_button_color: primary
 home_section_button_type: rounded
-home_footer_section_background_color: red
+home_footer_section_background_color: primary
 navbar_border_color: red
 navbar_button_color: danger
 navbar_button_type: rounded
