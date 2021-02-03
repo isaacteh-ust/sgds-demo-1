@@ -15,7 +15,7 @@ home_section_button_type: rounded
 home_footer_section_background_color: red
 navbar_border_color: red
 navbar_button_color: danger
-navbar_button_type: rounded
+navbar_button_type: outlined
 footer_text_color: white
 footer_background: dark
 footer_bottom-section_background: black
