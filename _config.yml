@@ -9,7 +9,7 @@ visit_docs_section_background: danger
 breadcrumb_background: red
 home_intro_background_color: danger
 home_intro_button_color: danger
-home_intro_button_type: primary
+home_intro_button_type: rounded
 home_section_button_color: danger
 home_section_button_type: rounded
 home_footer_section_background_color: red
