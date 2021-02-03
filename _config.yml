@@ -8,7 +8,7 @@ visit_docs_section_text_color: white
 visit_docs_section_background: primary
 breadcrumb_background: primary
 home_intro_background_color: primary
-home_intro_button_color: danger
+home_intro_button_color: primary
 home_intro_button_type: rounded
 home_section_button_color: danger
 home_section_button_type: rounded
