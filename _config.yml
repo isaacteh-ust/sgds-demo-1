@@ -2,7 +2,7 @@ title: Singapore Government Design System
 description: >-
   Design System unites Singapore Government digital services around a common
   visual language  and user experience
-visit_docs_section_button_color: white
+visit_docs_section_button_color: danger
 visit_docs_section_button_type: rounded
 visit_docs_section_text_color: white
 visit_docs_section_background: primary
