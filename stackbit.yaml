@@ -74,23 +74,7 @@ models:
               - primary
               - outlined
               - rounded 
-            default: rounded            
-          - type: enum
-            name: home_intro_background_color
-            label: Home Page Intro BG Color
-            options:
-              - white
-              - black
-              - light
-              - dark
-              - primary
-              - secondary
-              - link
-              - info
-              - success
-              - warning 
-              - danger
-            default: primary
+            default: rounded
       - type: object
         name: footer
         label: Footer
