@@ -105,3 +105,7 @@ sass:
   sass_dir: assets/custom-css
 baseurl: ''
 url: ''
+params:
+  home_intro_button_color: primary
+  home_intro_button_type: rounded
+  home_intro_background_color: primary
