@@ -137,52 +137,54 @@ models:
         options:
           - primary
           - outlined
-          - rounded 
+          - rounded
         default: rounded
-        required: true 
-      - type: enum
-        name: home_intro_button_color
-        label: Home Page Intro Button Color
-        options:
-          - white
-          - black
-          - light
-          - dark
-          - primary
-          - secondary
-          - link
-          - info
-          - success
-          - warning 
-          - danger
-        default: primary
-        required: true  
-      - type: enum
-        name: home_intro_button_type  
-        label: Home Page Intro Button Type
-        options:
-          - primary
-          - outlined
-          - rounded 
-        default: rounded
-        required: true 
-      - type: enum
-        name: home_intro_background_color
-        label: Home Page Intro BG Color
-        options:
-          - white
-          - black
-          - light
-          - dark
-          - primary
-          - secondary
-          - link
-          - info
-          - success
-          - warning 
-          - danger
-        default: primary
-        required: true 
+        required: true
+      - type: object
+        name: params
+        label: Params
+        required: true
+        fields:
+          - type: enum
+            name: home_intro_button_color
+            label: Home Page Intro Button Color
+            options:
+              - white
+              - black
+              - light
+              - dark
+              - primary
+              - secondary
+              - link
+              - info
+              - success
+              - warning 
+              - danger
+            default: primary             
+          - type: enum
+            name: home_intro_button_type  
+            label: Home Page Intro Button Type
+            options:
+              - primary
+              - outlined
+              - rounded 
+            default: rounded            
+          - type: enum
+            name: home_intro_background_color
+            label: Home Page Intro BG Color
+            options:
+              - white
+              - black
+              - light
+              - dark
+              - primary
+              - secondary
+              - link
+              - info
+              - success
+              - warning 
+              - danger
+            default: primary            
       - type: enum
         name: home_section_button_type  
         label: Home Section Button Type
