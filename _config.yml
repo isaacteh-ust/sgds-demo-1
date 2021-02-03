@@ -106,3 +106,4 @@ sass:
   sass_dir: assets/custom-css
 baseurl: ''
 url: ''
+home_intro_background_color: danger
