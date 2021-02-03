@@ -7,9 +7,10 @@ visit_docs_section_button_type: rounded
 visit_docs_section_text_color: white
 visit_docs_section_background: danger
 breadcrumb_background: red
-home_intro_button_color: link
-home_intro_button_type: rounded
-home_intro_background_color: danger
+params:
+  home_intro_button_color: link
+  home_intro_button_type: rounded
+  home_intro_background_color: danger
 home_section_button_color: danger
 home_section_button_type: rounded
 home_footer_section_background_color: red
