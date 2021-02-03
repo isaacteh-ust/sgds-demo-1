@@ -46,36 +46,6 @@ models:
       - type: string
         name: search_placeholder
       - type: object
-        name: params
-        label: Params
-        description: Site parameters
-        required: true
-        fields:
-          - type: enum
-            name: home_intro_button_color
-            label: Home Page Intro Button Color
-            options:
-              - white
-              - black
-              - light
-              - dark
-              - primary
-              - secondary
-              - link
-              - info
-              - success
-              - warning 
-              - danger
-            default: primary       
-          - type: enum
-            name: home_intro_button_type  
-            label: Home Page Intro Button Type
-            options:
-              - primary
-              - outlined
-              - rounded 
-            default: rounded
-      - type: object
         name: footer
         label: Footer
         fields:
