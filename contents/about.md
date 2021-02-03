@@ -3,14 +3,13 @@ layout: layout-about
 title: About
 permalink: /about/
 redirect_from:
-    - /contents/about
+  - /contents/about
 ---
-Background
-----------
+# Background
 
 The Singapore Government Design System (SGDS) was developed to empower teams in creating fast, accessible and mobile-friendly digital services, with a common set of UI components that comply with the [Digital Service Standards](https://www.tech.gov.sg/digital-service-standards/). As the web constantly evolves, the Government must match evolving user expectations to deliver high-quality digital services.
 
-* * *
+***
 
 ### Where to use SGDS
 
@@ -18,7 +17,7 @@ The Singapore Government Design System (SGDS) was developed to empower teams in 
 
 A static site is the most basic website, and the easiest to build. It requires no server-side processing, serving only client-side content in the form of HTML pages (and optionally CSS and JavaScript) to users' browsers or mobile phones.
 
-**[Isomer](https://www.isomer.gov.sg/)** is an informational website generator created by the Government Technology Agency of Singapore (GovTech). It provides templates for websites based on SGDS, allows users to easily edit website content, provides hosting and is compliant to applicable clauses in the Instruction Manual 8 (IM8), Design Service Standard (DSS) and Usability Checklist (UC).
+[**Isomer**](https://www.isomer.gov.sg/) is an informational website generator created by the Government Technology Agency of Singapore (GovTech). It provides templates for websites based on SGDS, allows users to easily edit website content, provides hosting and is compliant to applicable clauses in the Instruction Manual 8 (IM8), Design Service Standard (DSS) and Usability Checklist (UC).
 
 [Learn more about Isomer](https://isomer.gov.sg/)
 
@@ -28,7 +27,7 @@ Similar to static sites, dynamic websites serve client-side content. The differe
 
 For example, WordPress sites commonly make use of PHP programs together with MySQL as a database to serve dynamically-generated content to users. They also support user logins for content writers. For this reason, dynamic websites tend to be more complicated and costly to build.
 
-**[Content Website Platform(CWP)](https://www.xtremax.com/discover-cwp)** is a common secured website building and serving platform. It provides a suite of standardised software for hosting content-based websites. It enables unclassified government websites to be centrally managed and operated in the public cloud.
+[**Content Website Platform(CWP)**](https://www.xtremax.com/discover-cwp) is a common secured website building and serving platform. It provides a suite of standardised software for hosting content-based websites. It enables unclassified government websites to be centrally managed and operated in the public cloud.
 
 [Learn more about CWP](https://www.xtremax.com/discover-cwp)
 
@@ -40,13 +39,13 @@ Transactional sites are usually built by vendors, who are encouraged to leverage
 
 [Download Design System package](/assets/downloads/sgds-govtech.zip)
 
-* * *
+***
 
 ### How Everything Fits
 
 ![relationships](/assets/img/img_relationships.png)
 
-* * *
+***
 
 ### Our Core Principles
 
@@ -60,7 +59,7 @@ We constantly keep these core principles in mind when making design decisions at
 
 **Reusable:** Eliminate the hassle of recreating basic components and patterns for every new product. SGDS houses a comprehensive collection of design components for you. These tried-and-tested assets reflect the industry’s best practices.
 
-* * *
+***
 
 ### Why use a design system?
 
