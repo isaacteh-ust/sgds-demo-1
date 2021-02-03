@@ -22,7 +22,7 @@ search_button_size: small
 footer_text_color: white
 footer_background: dark
 footer_bottom-section_background: black
-feedback_button_color: danger
+feedback_button_color: primary
 feedback_button_type: rounded
 logo: assets/img/logo_sgds.png
 nav_logo: /assets/img/logo-sgds.svg
