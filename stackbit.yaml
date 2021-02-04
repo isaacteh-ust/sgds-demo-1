@@ -529,6 +529,10 @@ models:
         const: layout-docs
         required: true
         hidden: true
+      - type: string
+        name: permalink
+      - type: string
+        name: redirect_from          
   general:
     type: page    
     label: General
