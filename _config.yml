@@ -108,3 +108,4 @@ sass:
   sass_dir: assets/custom-css
 baseurl: ''
 url: ''
+sidenav-pattern: danger
