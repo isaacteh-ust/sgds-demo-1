@@ -24,7 +24,7 @@ footer_background: dark
 footer_bottom-section_background: black
 feedback_button_color: primary
 feedback_button_type: rounded
-sidenav-docs: primray
+sidenav-docs: danger
 sidenav-patterns: primary
 h2_color: danger
 logo: assets/img/logo_sgds.png
