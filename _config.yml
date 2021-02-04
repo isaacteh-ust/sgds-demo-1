@@ -5,7 +5,7 @@ description: >-
 navbar_border_color: primary
 navbar_button_color: danger
 navbar_button_type: rounded
-breadcrumb_background: primary
+breadcrumb_background: success
 home_intro_background_color: danger
 home_intro_button_color: danger
 home_intro_button_type: rounded
