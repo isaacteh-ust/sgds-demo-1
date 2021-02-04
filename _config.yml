@@ -4,7 +4,7 @@ description: >-
   visual language  and user experience
 ####################################
 # color palette  
-navbar_border_color: danger
+navbar_border_color: primary
 navbar_button_color: primary
 navbar_button_type: rounded
 breadcrumb_background: primary
@@ -26,9 +26,9 @@ footer_background: dark
 footer_bottom-section_background: black
 feedback_button_color: primary
 feedback_button_type: rounded
-sidenav-docs: danger
-sidenav-patterns: danger
-h2_color: danger
+sidenav-docs: primray
+sidenav-patterns: primary
+h2_color: primary
 ####################################
 logo: assets/img/logo_sgds.png
 nav_logo: /assets/img/logo-sgds.svg

@@ -101,7 +101,25 @@ a[target="_blank"]:after {
   );
 }
 
-.has-background-gradient-red {
+.has-background-gradient-success {
+  background: rgb(0, 134, 73);
+  background: linear-gradient(
+    30deg,
+    rgb(20, 134, 73) 0%,
+    rgb(19, 202, 132) 100%
+  );
+}
+
+.has-background-gradient-warning {
+  background: rgb(245, 166, 35);
+  background: linear-gradient(
+    30deg,
+    rgb(245, 166, 35) 0%,
+    rgb(245, 231, 35) 100%
+  );
+}
+
+.has-background-gradient-danger {
   background: rgb(208, 2, 27);
   background: linear-gradient(
     30deg,
