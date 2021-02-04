@@ -15,7 +15,7 @@ home_footer_section_background_color: warning
 visit_docs_section_button_color: light
 visit_docs_section_button_type: rounded
 visit_docs_section_text_color: white
-visit_docs_section_background: primary
+visit_docs_section_background: danger
 search_button_type: primary
 search_button_color: danger
 search_button_size: small
