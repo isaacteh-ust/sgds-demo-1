@@ -458,13 +458,6 @@ models:
     folder: collections/_standard
     fields:
       - type: string
-        name: title
-        label: Title
-        required: true
-      - type: string
-        name: permalink
-        label: Permalink  
-      - type: string
         name: layout
         label: Docs Layout
         const: layout-docs
@@ -518,7 +511,6 @@ models:
     type: page
     folder: docs
     label: Docs
-    folder: docs
     fields:
       - type: string
         name: title
