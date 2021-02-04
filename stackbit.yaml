@@ -455,8 +455,7 @@ models:
   standard:
     type: page
     label: Standard
-    urlPath: '/collections/_standard/{slug}'
-    filePath: 'collections/_standard/{slug}.md'
+    folder: collections/_standard
     fields:
       - type: string
         name: title
