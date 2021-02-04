@@ -9445,12 +9445,58 @@ a.sgds-navbar-item {
 a.sgds-navbar-item.is-active,
 a.sgds-navbar-item:focus,
 a.sgds-navbar-item:focus-within,
-a.sgds-navbar-item.purple:hover {
+a.sgds-navbar-item.primary:hover {
 	background-color: transparent;
 	color: #6037b3
 }
 
-a.sgds-navbar-item.red:hover {
+a.sgds-navbar-item.white:hover {
+	background-color: transparent;
+	color: #ffffff
+}
+
+a.sgds-navbar-item.black:hover {
+	background-color: transparent;
+	color: #000000
+}
+
+a.sgds-navbar-item.light:hover {
+	background-color: transparent;
+	color: #f5f5f5
+}
+
+a.sgds-navbar-item.dark:hover {
+	background-color: transparent;
+	color: #323232
+}
+
+a.sgds-navbar-item.secondary:hover {
+	background-color: transparent;
+	color: #3e69be
+}
+
+
+a.sgds-navbar-item.link:hover {
+	background-color: transparent;
+	color: #0070F2
+}
+
+a.sgds-navbar-item.info:hover {
+	background-color: transparent;
+	color: #008196
+}
+
+a.sgds-navbar-item.success:hover {
+	background-color: transparent;
+	color: #008649
+}
+
+a.sgds-navbar-item.warning:hover {
+	background-color: transparent;
+	color: #f5a623
+}
+
+a.sgds-navbar-item.danger:hover {
 	background-color: transparent;
 	color: #d0021b
 }
