@@ -8,7 +8,7 @@ navbar_border_color: danger
 navbar_button_color: primary
 navbar_button_type: rounded
 breadcrumb_background: danger
-home_intro_background_color: primary
+home_intro_background_color: mary
 home_intro_button_color: primary
 home_intro_button_type: rounded
 home_section_button_color: primary
