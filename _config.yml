@@ -2,9 +2,7 @@ title: Singapore Government Design System
 description: >-
   Design System unites Singapore Government digital services around a common
   visual language  and user experience
-####################################
-# color palette  
-navbar_border_color: danger
+navbar_border_color: red
 navbar_button_color: primary
 navbar_button_type: rounded
 breadcrumb_background: danger
@@ -29,7 +27,6 @@ feedback_button_type: rounded
 sidenav-docs: danger
 sidenav-patterns: danger
 h2_color: danger
-####################################
 logo: assets/img/logo_sgds.png
 nav_logo: /assets/img/logo-sgds.svg
 sgds-version: 1.3.17
