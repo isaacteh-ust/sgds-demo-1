@@ -454,9 +454,17 @@ models:
         name: category            
   standard:
     type: page
-    label: Standard    
-    folder: collections/_standard
+    label: Standard
+    urlPath: '/collections/_standard/{slug}'
+    filePath: 'collections/_standard/{slug}.md'
     fields:
+      - type: string
+        name: title
+        label: Title
+        required: true
+      - type: string
+        name: permalink
+        label: Permalink  
       - type: string
         name: layout
         label: Docs Layout
@@ -509,8 +517,9 @@ models:
         name: category                                              
   docs:
     type: page
-    folder: docs
+    urlPath: '/docs/{slug}'
     label: Docs
+    folder: docs
     fields:
       - type: string
         name: title
@@ -524,7 +533,7 @@ models:
         hidden: true
   general:
     type: page
-    folder: contents/general
+    urlPath: '/contents/general/{slug}'
     label: General
     folder: contents/general
     fields:
