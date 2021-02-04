@@ -330,7 +330,7 @@ models:
         default: primary
         required: true   
       - type: enum
-        name: sidenav-pattern
+        name: sidenav-patterns
         label: Sidenav Pattern Page
         options:
           - white

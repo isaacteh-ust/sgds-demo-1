@@ -9550,16 +9550,79 @@ a.sgds-navbar-item.danger:hover {
 }
 
 .sgds-navbar-item.is-tab:focus,
-.sgds-navbar-item.is-tab.purple:hover {
+.sgds-navbar-item.is-tab.primary:hover {
 	background-color: transparent;
 	border-bottom-color: #6037b3;
 	border-bottom-width: 5px;
 	padding-bottom: calc(.5rem - 5px)
 }
 
-.sgds-navbar-item.is-tab.red:hover {
+.sgds-navbar-item.is-tab.danger:hover {
 	background-color: transparent;
 	border-bottom-color: #d0021b;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.secondary:hover {
+	background-color: transparent;
+	border-bottom-color: #3e69be;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.white:hover {
+	background-color: transparent;
+	border-bottom-color: #ffffff;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.black:hover {
+	background-color: transparent;
+	border-bottom-color: #000000;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.light:hover {
+	background-color: transparent;
+	border-bottom-color: #f5f5f5;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.light:hover {
+	background-color: transparent;
+	border-bottom-color: #323232;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.link:hover {
+	background-color: transparent;
+	border-bottom-color: #0070F2;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.info:hover {
+	background-color: transparent;
+	border-bottom-color: #008196;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.warning:hover {
+	background-color: transparent;
+	border-bottom-color: #f5a623;
+	border-bottom-width: 5px;
+	padding-bottom: calc(.5rem - 5px)
+}
+
+.sgds-navbar-item.is-tab.success:hover {
+	background-color: transparent;
+	border-bottom-color: #008649;
 	border-bottom-width: 5px;
 	padding-bottom: calc(.5rem - 5px)
 }
