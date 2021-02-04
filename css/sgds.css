@@ -9637,28 +9637,28 @@ a.sgds-navbar-item.danger:hover {
 .sgds-navbar-item.is-tab.is-active.white {
 	background-color: transparent;
 	border-bottom: 5px solid #ffffff;
-	color: #6037b3;
+	color: #ffffff;
 	padding-bottom: calc(.5rem - 1px)
 }
 
 .sgds-navbar-item.is-tab.is-active.black {
 	background-color: transparent;
 	border-bottom: 5px solid #000000;
-	color: #6037b3;
+	color: #000000;
 	padding-bottom: calc(.5rem - 1px)
 }
 
 .sgds-navbar-item.is-tab.is-active.light {
 	background-color: transparent;
 	border-bottom: 5px solid #f5f5f5;
-	color: #6037b3;
+	color: #f5f5f5;
 	padding-bottom: calc(.5rem - 1px)
 }
 
 .sgds-navbar-item.is-tab.is-active.dark {
 	background-color: transparent;
 	border-bottom: 5px solid #323232;
-	color: #6037b3;
+	color: #323232;
 	padding-bottom: calc(.5rem - 1px)
 }
 
@@ -9672,35 +9672,35 @@ a.sgds-navbar-item.danger:hover {
 .sgds-navbar-item.is-tab.is-active.secondary {
 	background-color: transparent;
 	border-bottom: 5px solid #3e69be;
-	color: #6037b3;
+	color: #3e69be;
 	padding-bottom: calc(.5rem - 1px)
 }
 
 .sgds-navbar-item.is-tab.is-active.link {
 	background-color: transparent;
 	border-bottom: 5px solid #0070F2;
-	color: #6037b3;
+	color: #0070F2;
 	padding-bottom: calc(.5rem - 1px)
 }
 
 .sgds-navbar-item.is-tab.is-active.info {
     background-color: transparent;
     border-bottom: 5px solid #008196;
-    color: #d0021b;
+    color: #008196;
     padding-bottom: calc(.5rem - 1px)
 }
 
 .sgds-navbar-item.is-tab.is-active.success {
     background-color: transparent;
     border-bottom: 5px solid #008649;
-    color: #d0021b;
+    color: #008649;
     padding-bottom: calc(.5rem - 1px)
 }
 
 .sgds-navbar-item.is-tab.is-active.warning {
     background-color: transparent;
     border-bottom: 5px solid #f5a623;
-    color: #d0021b;
+    color: #f5a623;
     padding-bottom: calc(.5rem - 1px)
 }
 
