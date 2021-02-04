@@ -218,10 +218,19 @@ models:
         name: navbar_border_color
         label: Navbar Border Color
         options:
-          - purple
-          - red
-        default: red
-        required: true 
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true
       - type: enum
         name: navbar_button_type  
         label: Navbar Button Type
@@ -313,7 +322,7 @@ models:
           - success
           - warning 
           - danger
-        default: danger
+        default: primary
         required: true   
       - type: enum
         name: sidenav-pattern
@@ -330,7 +339,7 @@ models:
           - success
           - warning 
           - danger
-        default: danger
+        default: primary
         required: true 
       - type: enum
         name: h2_color
@@ -347,7 +356,7 @@ models:
           - success
           - warning 
           - danger
-        default: danger
+        default: primary
         required: true                     
       - type: object
         name: footer
