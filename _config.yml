@@ -26,7 +26,7 @@ feedback_button_color: primary
 feedback_button_type: rounded
 sidenav-docs: primray
 sidenav-patterns: primary
-h2_color: primary
+h2_color: danger
 logo: assets/img/logo_sgds.png
 nav_logo: /assets/img/logo-sgds.svg
 sgds-version: 1.3.17
