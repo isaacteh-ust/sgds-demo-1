@@ -516,8 +516,7 @@ models:
         name: category                                              
   docs:
     type: page
-    urlPath: '/docs/{slug}'
-    label: Docs
+    label: Docs    
     folder: docs
     fields:
       - type: string
@@ -531,8 +530,7 @@ models:
         required: true
         hidden: true
   general:
-    type: page
-    urlPath: '/contents/general/{slug}'
+    type: page    
     label: General
     folder: contents/general
     fields:
