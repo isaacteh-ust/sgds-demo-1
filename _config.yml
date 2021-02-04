@@ -4,7 +4,7 @@ description: >-
   visual language  and user experience
 ####################################
 # color palette  
-navbar_border_color: purple
+navbar_border_color: danger
 navbar_button_color: primary
 navbar_button_type: rounded
 breadcrumb_background: primary
