@@ -298,7 +298,57 @@ models:
           - warning 
           - danger
         default: black
+      - type: enum
+        name: sidenav-docs
+        label: Sidenav Docs
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: danger
         required: true   
+      - type: enum
+        name: sidenav-pattern
+        label: Sidenav Pattern Page
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: danger
+        required: true 
+      - type: enum
+        name: h2_color
+        label: H2 Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: danger
+        required: true                     
       - type: object
         name: footer
         label: Footer

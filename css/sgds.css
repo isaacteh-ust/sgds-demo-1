@@ -4718,6 +4718,61 @@ strong {
 	margin-top: 1em
 }
 
+.content.is-primary h2 {
+  color: #6037b3;
+  margin-bottom: 2rem;
+}
+
+.content.is-secondary h2 {
+  color: #3e69be;
+  margin-bottom: 2rem;
+}
+
+.content.is-link h2 {
+  color: #0070F2;
+  margin-bottom: 2rem;
+}
+
+.content.is-info h2 {
+  color: #008196;
+  margin-bottom: 2rem;
+}
+
+.content.is-success h2 {
+  color: #008649;
+  margin-bottom: 2rem;
+}
+
+.content.is-warning h2 {
+  color: #f5a623;
+  margin-bottom: 2rem;
+}
+
+.content.is-danger h2 {
+  color: #d0021b;
+  margin-bottom: 2rem;
+}
+
+.content.is-white h2 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.content.is-black h2 {
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.content.is-light h2 {
+  color: #f5f5f5;
+  margin-bottom: 2rem;
+}
+
+.content.is-dark h2 {
+  color: #323232;
+  margin-bottom: 2rem;
+}
+
 .content blockquote:not(:last-child),
 .content dl:not(:last-child),
 .content ol:not(:last-child),
@@ -8251,7 +8306,25 @@ screen and (min-width:769px) {
 	color: #6037b3
 }
 
+.sgds-menu-list.is-danger a:hover  {
+	color: #d0021b
+}
+
 .sgds-menu-list a.is-active {
+	color: #6037b3;
+	font-weight: 600;
+	border-color: #6037b3;
+	border-bottom: 2px solid #6037b3
+}
+
+.sgds-menu-list.is-danger a.is-active  {
+	color: #d0021b;
+	font-weight: 600;
+	border-color: #d0021b;
+	border-bottom: 2px solid #d0021b
+}
+
+.sgds-menu-list a.is-active .is-primary {
 	color: #6037b3;
 	font-weight: 600;
 	border-color: #6037b3;
