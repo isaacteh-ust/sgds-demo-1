@@ -348,7 +348,7 @@ models:
         required: true 
       - type: enum
         name: h2_color
-        label: H2 Color
+        label: Header Color
         options:
           - white
           - black
