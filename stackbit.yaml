@@ -44,10 +44,10 @@ models:
       - type: string
         name: last_updated                                        
       - type: string
-        name: search_placeholder
+        name: search_placeholder 
       - type: enum
-        name: visit_docs_section_button_color
-        label: Visit Docs Section Button Color
+        name: navbar_border_color
+        label: Navbar Border Color
         options:
           - white
           - black
@@ -58,39 +58,22 @@ models:
           - link
           - info
           - success
-          - warning
+          - warning 
           - danger
-        default: white
-        required: true               
+        default: primary
+        required: true          
       - type: enum
-        name: visit_docs_section_button_type
-        label: Visit Docs Section Button Types
+        name: navbar_button_type  
+        label: Navbar Button Type
         options:
           - primary
           - outlined
           - rounded 
         default: rounded
-        required: true               
-      - type: enum
-        name: visit_docs_section_text_color
-        label: Visit Docs Section Text Color
-        options:
-          - white
-          - black
-          - light
-          - dark
-          - primary
-          - secondary
-          - link
-          - info
-          - success
-          - warning 
-          - danger
-        default: white
         required: true 
       - type: enum
-        name: visit_docs_section_background
-        label: Visit Docs Section Background Color
+        name: navbar_button_color
+        label: Navbar Button Color
         options:
           - white
           - black
@@ -104,42 +87,7 @@ models:
           - warning 
           - danger
         default: primary
-        required: true               
-      - type: enum
-        name: breadcrumb_background
-        label: Breadcrumb Background Color
-        options:
-          - primary
-          - secondary 
-          - red
-        default: primary   
-        required: true     
-      - type: enum
-        name: feedback_button_color
-        label: Feedback Button Color
-        options:
-          - white
-          - black
-          - light
-          - dark
-          - primary
-          - secondary
-          - link
-          - info
-          - success
-          - warning 
-          - danger
-        default: primary
-        required: true  
-      - type: enum
-        name: feedback_button_type  
-        label: Feedback Button Type
-        options:
-          - primary
-          - outlined
-          - rounded
-        default: rounded
-        required: true
+        required: true         
       - type: enum
         name: home_intro_button_color
         label: Home Page Intro Button Color
@@ -211,29 +159,26 @@ models:
         label: Home Foot Section BG Color
         options:
           - primary
-          - red
+          - secondary
+          - warning
+          - success
+          - danger
         default: primary
-        required: true    
+        required: true                 
       - type: enum
-        name: navbar_border_color
-        label: Navbar Border Color
-        options:
-          - purple
-          - red
-        default: red
-        required: true 
-      - type: enum
-        name: navbar_button_type  
-        label: Navbar Button Type
+        name: breadcrumb_background
+        label: Breadcrumb Background Color
         options:
           - primary
-          - outlined
-          - rounded 
-        default: rounded
-        required: true 
+          - secondary
+          - warning
+          - success
+          - danger
+        default: primary   
+        required: true     
       - type: enum
-        name: navbar_button_color
-        label: Navbar Button Color
+        name: feedback_button_color
+        label: Feedback Button Color
         options:
           - white
           - black
@@ -247,7 +192,76 @@ models:
           - warning 
           - danger
         default: primary
+        required: true  
+      - type: enum
+        name: visit_docs_section_button_color
+        label: Visit Docs Section Button Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning
+          - danger
+        default: white
+        required: true               
+      - type: enum
+        name: visit_docs_section_button_type
+        label: Visit Docs Section Button Types
+        options:
+          - primary
+          - outlined
+          - rounded 
+        default: rounded
+        required: true               
+      - type: enum
+        name: visit_docs_section_text_color
+        label: Visit Docs Section Text Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: white
         required: true 
+      - type: enum
+        name: visit_docs_section_background
+        label: Visit Docs Section Background Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true               
+      - type: enum
+        name: feedback_button_type  
+        label: Feedback Button Type
+        options:
+          - primary
+          - outlined
+          - rounded
+        default: rounded
+        required: true
       - type: enum
         name: footer_text_color
         label: Footer Text Color
@@ -298,7 +312,57 @@ models:
           - warning 
           - danger
         default: black
+      - type: enum
+        name: sidenav-docs
+        label: Sidenav Docs
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
         required: true   
+      - type: enum
+        name: sidenav-patterns
+        label: Sidenav Pattern Page
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true 
+      - type: enum
+        name: h2_color
+        label: Header Font Color
+        options:
+          - white
+          - black
+          - light
+          - dark
+          - primary
+          - secondary
+          - link
+          - info
+          - success
+          - warning 
+          - danger
+        default: primary
+        required: true                     
       - type: object
         name: footer
         label: Footer
@@ -391,8 +455,7 @@ models:
   standard:
     type: page
     label: Standard
-    urlPath: '/collections/_standard/{slug}'
-    filePath: 'collections/_standard/{slug}.md'
+    folder: collections/_standard
     fields:
       - type: string
         name: title
@@ -453,8 +516,7 @@ models:
         name: category                                              
   docs:
     type: page
-    urlPath: '/docs/{slug}'
-    label: Docs
+    label: Docs    
     folder: docs
     fields:
       - type: string
@@ -468,8 +530,7 @@ models:
         required: true
         hidden: true
   general:
-    type: page
-    urlPath: '/contents/general/{slug}'
+    type: page    
     label: General
     folder: contents/general
     fields:
