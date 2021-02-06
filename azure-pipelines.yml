@@ -4,9 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
 trigger:
-  branches:
-    include:
-    - master
+  main
     
 pool:
   vmImage: 'ubuntu-latest'
