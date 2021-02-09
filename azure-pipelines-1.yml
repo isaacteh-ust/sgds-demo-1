@@ -33,6 +33,20 @@ steps:
       chmod -R 777  ./
       docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t http://172.17.0.1:8080 -g gen.conf -x OWASP-ZAP-Report.xml -r scan-report.html
       true
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $XslPath = "$($Env:SYSTEM_DEFAULTWORKINGDIRECTORY)/test/OWASPToNUnit3.xslt"
+      $XmlInputPath = "$($Env:SYSTEM_DEFAULTWORKINGDIRECTORY)/OWASP-ZAP-Report.xml"
+      $XmlOutputPath = "$($Env:SYSTEM_DEFAULTWORKINGDIRECTORY)/Converted-OWASP-ZAP-Report.xml"
+      $XslTransform = New-Object System.Xml.Xsl.XslCompiledTransform
+      $XslTransform.Load($XslPath)
+      $XslTransform.Transform($XmlInputPath, $XmlOutputPath)
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: 'Converted-OWASP-ZAP-Report.xml'
 - task: CopyFiles@2
   displayName: 'Copy _site to: $(Build.ArtifactStagingDirectory)'
   inputs:
