@@ -26,6 +26,13 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      chmod -R 777 $(pwd)/_site
+      ls -lrt
+      echo "^ ls"
+      ls -lrt "$(pwd)"
+      echo "^ pwd ls"      
+      ls -lrt "$(pwd)/_site"
+      echo "^ pwd _site ls"
       docker run --rm --volume="/home/vsts/work/1/s/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
       curl -v http://172.17.0.1:8080
 - task: Bash@3
