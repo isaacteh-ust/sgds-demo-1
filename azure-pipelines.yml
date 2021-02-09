@@ -31,8 +31,9 @@ steps:
     organization: 'ustdigital'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: sonar-sgds-demo1
-    cliProjectName: sgds-demo-1
+    cliProjectKey: 'sgds-demo-1'
+    cliProjectName: 'sgds'
+    cliSources: '.'
 - task: SonarCloudAnalyze@1
 - task: SonarCloudPublish@1
   inputs:
