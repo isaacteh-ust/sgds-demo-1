@@ -24,7 +24,7 @@ steps:
     dockerVersion: '17.09.0-ce'
 - script: |
     chmod -R 777 $(pwd)/_site
-    docker run --rm --volume="$(PWD)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
+    docker run --rm --volume="$(pwd)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
     curl -v http://172.17.0.1:8080
 - task: Bash@3
   inputs:
