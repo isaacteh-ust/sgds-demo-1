@@ -18,11 +18,11 @@ steps:
 
 - script: |
     gem install bundler
+    bundle update jekyll
     bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
 
-- script: |
-    bundle update jekyll
+- script: |    
     jekyll build
   displayName: 'jekyll build'
 - task: SonarCloudPrepare@1
