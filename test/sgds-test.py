@@ -15,6 +15,8 @@ class TestTest():
   def setup_method(self, method):
     chrome_options = Options()  
     chrome_options.add_argument("--headless")  
+    self.driver = webdriver.Chrome(chrome_options=chrome_options)
+    self.vars = {}
   
   def teardown_method(self, method):
     self.driver.quit()
