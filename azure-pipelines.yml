@@ -22,7 +22,7 @@ steps:
   displayName: 'bundle install'
 
 - script: |
-    bundle install
+    bundle update jekyll
     jekyll build
   displayName: 'jekyll build'
 - task: SonarCloudPrepare@1
