@@ -22,7 +22,6 @@ steps:
   displayName: 'bundle install'
 
 - script: |
-    bundle update jekyll
     bundle install
     jekyll build
   displayName: 'jekyll build'
