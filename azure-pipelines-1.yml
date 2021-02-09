@@ -18,13 +18,28 @@ steps:
     bundle update jekyll
     bundle install --retry=3 --jobs=4
     jekyll build
-- task: Bash@3
+  displayName: 'bundle install'
+- task: DockerInstaller@0
   inputs:
-    targetType: 'inline'
-    script: |
-      chmod -R 777  ./
-      docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t http://172.17.0.1:8080 -g gen.conf -x OWASP-ZAP-Report.xml -r scan-report.html
-      true
+    dockerVersion: '17.09.0-ce'
+- script: |
+    chmod -R 777 $(pwd)/_site
+    docker run --rm --volume="$(pwd)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
+    curl -v http://172.17.0.1:8080
+- task: CSE-DevOps.zap-scanner.custom-build-release-task.owaspzap@1
+  displayName: 'ZAP Scanner'
+  inputs:
+    scantype: targetedScan
+    threshold: '30'
+    url: 'http://172.17.0.1'
+    port: 8080
+#- task: Bash@3
+#  inputs:
+#    targetType: 'inline'
+#    script: |
+#      chmod -R 777  ./
+#      docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t http://172.17.0.1:8080 -g gen.conf -x OWASP-ZAP-Report.xml -r scan-report.html
+#      true
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
@@ -35,12 +50,10 @@ steps:
       $XslTransform = New-Object System.Xml.Xsl.XslCompiledTransform
       $XslTransform.Load($XslPath)
       $XslTransform.Transform($XmlInputPath, $XmlOutputPath)
-  displayName: 'Convert Test Result to NUnit'    
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: 'Converted-OWASP-ZAP-Report.xml'
-  displayName: 'Publish Test Result'    
 - task: CopyFiles@2
   displayName: 'Copy _site to: $(Build.ArtifactStagingDirectory)'
   inputs:
