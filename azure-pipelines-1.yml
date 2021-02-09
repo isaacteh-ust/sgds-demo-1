@@ -17,6 +17,7 @@ steps:
     gem install bundler
     bundle update jekyll
     bundle install --retry=3 --jobs=4
+    jekyll build
   displayName: 'bundle install'
 - task: DockerInstaller@0
   inputs:
