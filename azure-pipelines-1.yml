@@ -30,6 +30,7 @@ steps:
   displayName: 'ZAP Scanner'
   inputs:
     scantype: targetedScan
+    threshold: '30'
     url: 'http://172.17.0.1'
     port: 8080
 #- task: Bash@3
