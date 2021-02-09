@@ -27,7 +27,6 @@ steps:
     jekyll build
   displayName: 'jekyll build'
 - task: SonarCloudPrepare@1
-displayName: Prepare SonarCloud Scan
   inputs:
     SonarCloud: 'Sonarcloud'
     organization: 'ustdigital'
