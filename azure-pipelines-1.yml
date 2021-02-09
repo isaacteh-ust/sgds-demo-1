@@ -28,13 +28,12 @@ steps:
     curl -v http://172.17.0.1:8080
   displayName: 'Local Deployment'
 - task: CSE-DevOps.zap-scanner.custom-build-release-task.owaspzap@1
-  displayName: 'ZAP Scanner'
+  displayName: 'DAST Scanner'
   inputs:
     scantype: targetedScan
     threshold: '30'
     url: 'http://172.17.0.1'
     port: 8080
-  displayName: 'DAST Scan'  
 #- task: Bash@3
 #  inputs:
 #    targetType: 'inline'
