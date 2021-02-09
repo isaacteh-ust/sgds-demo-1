@@ -4,7 +4,9 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
 trigger:
-  main
+  branches:
+    include:
+    - master
     
 pool:
   vmImage: 'ubuntu-latest'
@@ -25,12 +27,12 @@ steps:
     jekyll build
   displayName: 'jekyll build'
 - task: SonarCloudPrepare@1
-  displayName: Prepare analysis on SonarCloud
+displayName: Prepare SonarCloud Scan
   inputs:
-    SonarCloud: 9a152823-7c6f-4aa8-a290-3457e881b67a
-    organization: isaacteh
-    scannerMode: CLI
-    configMode: manual
+    SonarCloud: 'Sonarcloud'
+    organization: 'ustdigital'
+    scannerMode: 'CLI'
+    configMode: 'manual'
     cliProjectKey: sonar-sgds-demo1
     cliProjectName: sgds-demo-1
 - task: SonarCloudAnalyze@1
@@ -40,13 +42,18 @@ steps:
 - task: sonarcloud-buildbreaker@2
   inputs:
     SonarCloud: 'SwiftSight'
-    organization: 'isaacteh'
+    organization: 'ustdigital'
 - task: CopyFiles@2
-  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy _site to: $(Build.ArtifactStagingDirectory)'
   inputs:
     SourceFolder: _site
     TargetFolder: $(Build.ArtifactStagingDirectory)
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: site'
+- task: CopyFiles@2
+  displayName: 'Copy test script to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    ArtifactName: site
+    SourceFolder: test
+    TargetFolder: $(Build.ArtifactStagingDirectory)    
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  inputs:
+    ArtifactName: drop
