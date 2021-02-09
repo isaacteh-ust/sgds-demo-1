@@ -18,7 +18,7 @@ steps:
     bundle update jekyll
     bundle install --retry=3 --jobs=4
     jekyll build
-  displayName: 'bundle install'
+  displayName: 'Jekyll Build'
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
@@ -26,6 +26,7 @@ steps:
     chmod -R 777 $(pwd)/_site
     docker run --rm --volume="$(pwd)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
     curl -v http://172.17.0.1:8080
+  displayName: 'Local Deployment'
 - task: CSE-DevOps.zap-scanner.custom-build-release-task.owaspzap@1
   displayName: 'ZAP Scanner'
   inputs:
@@ -33,6 +34,7 @@ steps:
     threshold: '30'
     url: 'http://172.17.0.1'
     port: 8080
+  displayName: 'DAST Scan'  
 #- task: Bash@3
 #  inputs:
 #    targetType: 'inline'
@@ -50,10 +52,12 @@ steps:
       $XslTransform = New-Object System.Xml.Xsl.XslCompiledTransform
       $XslTransform.Load($XslPath)
       $XslTransform.Transform($XmlInputPath, $XmlOutputPath)
+  displayName: 'Convert Test Result to NUnit'    
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: 'Converted-OWASP-ZAP-Report.xml'
+  displayName: 'Publish Test Result'    
 - task: CopyFiles@2
   displayName: 'Copy _site to: $(Build.ArtifactStagingDirectory)'
   inputs:
