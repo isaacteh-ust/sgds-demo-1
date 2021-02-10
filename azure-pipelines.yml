@@ -1,27 +1,24 @@
-# Ruby
-# Package your Ruby project.
-# Add steps that install rails, analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
-trigger: none
+trigger:
+  branches:
+    include:
+    - master
     
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'ubuntu-18.04'
 
 steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '>= 2.2 < 2.6'
-
 - script: |
     gem install bundler
     bundle update jekyll
     bundle install --retry=3 --jobs=4
   displayName: 'bundle install'
-
-- script: |    
+- script: |
     jekyll build
-  displayName: 'jekyll build'
+  displayName: 'Jekyll build'
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'Sonarcloud'
@@ -39,17 +36,62 @@ steps:
 #  inputs:
 #    SonarCloud: 'Sonarcloud'
 #    organization: 'ustdigital'
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
+- script: |
+    chmod -R 777 $(pwd)/_site
+    docker run --rm --volume="$(pwd)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
+    netstat -tlpen | grep 8080
+    curl -v http://172.17.0.1:8080 --retry 3
+  displayName: Deploy to local  
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      chmod -R 777  ./
+      docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://172.17.0.1:8080 -g gen.conf -x OWASP-ZAP-Report.xml -r scan-report.html
+      true 
+  displayName: OWASP Scan
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $XslPath = "$($Env:SYSTEM_DEFAULTWORKINGDIRECTORY)/test/OWASPToNUnit3.xslt"
+      $XmlInputPath = "$($Env:SYSTEM_DEFAULTWORKINGDIRECTORY)/OWASP-ZAP-Report.xml"
+      $XmlOutputPath = "$($Env:SYSTEM_DEFAULTWORKINGDIRECTORY)/Converted-OWASP-ZAP-Report.xml"
+      $XslTransform = New-Object System.Xml.Xsl.XslCompiledTransform
+      $XslTransform.Load($XslPath)
+      $XslTransform.Transform($XmlInputPath, $XmlOutputPath)
+  displayName: Convert result to NUnit type file
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'NUnit'
+    testResultsFiles: 'Converted-OWASP-ZAP-Report.xml'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '$(System.DefaultWorkingDirectory)'
+  displayName: Npm install  
+- task: CmdLine@2
+  inputs:
+    script: |
+      wget https://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip
+      unzip chromedriver_linux64.zip
+      sudo mv chromedriver /usr/bin
+      rm chromedriver_linux64.zip
+  displayName: Install Chromedriver      
+- task: CmdLine@2
+  inputs:
+    script: 'npm test'
+  displayName: Run UI test    
 - task: CopyFiles@2
   displayName: 'Copy _site to: $(Build.ArtifactStagingDirectory)'
   inputs:
     SourceFolder: _site
-    TargetFolder: $(Build.ArtifactStagingDirectory)
-- task: CopyFiles@2
-  displayName: 'Copy test script to: $(Build.ArtifactStagingDirectory)'
-  inputs:
-    SourceFolder: test
     TargetFolder: $(Build.ArtifactStagingDirectory)    
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   inputs:
-    ArtifactName: drop
+    ArtifactName: drop    
+
