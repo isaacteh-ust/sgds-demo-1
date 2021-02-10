@@ -1,7 +1,3 @@
-# Ruby
-# Package your Ruby project.
-# Add steps that install rails, analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/ruby
 
 trigger: none
     
@@ -12,34 +8,48 @@ steps:
 - task: UseRubyVersion@0
   inputs:
     versionSpec: '>= 2.2 < 2.6'
-
 - script: |
     gem install bundler
     bundle update jekyll
     bundle install --retry=3 --jobs=4
-    jekyll build
   displayName: 'bundle install'
+- script: |
+    jekyll build
+  displayName: 'Jekyll build'
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'Sonarcloud'
+    organization: 'ustdigital'
+    scannerMode: 'CLI'
+    configMode: 'manual'
+    cliProjectKey: 'sgds-demo-1'
+    cliProjectName: 'sgds'
+    cliSources: '.'
+- task: SonarCloudAnalyze@1
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+#- task: sonarcloud-buildbreaker@2
+#  inputs:
+#    SonarCloud: 'Sonarcloud'
+#    organization: 'ustdigital'
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
 - script: |
     chmod -R 777 $(pwd)/_site
-    docker run --rm --volume="$(PWD)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
-    curl -v http://172.17.0.1:8080
-- task: CSE-DevOps.zap-scanner.custom-build-release-task.owaspzap@1
-  displayName: 'ZAP Scanner'
+    docker run --rm --volume="$(pwd)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
+    netstat -tlpen | grep 8080
+    curl -v http://172.17.0.1:8080 --retry 3
+  displayName: Deploy to local  
+- task: Bash@3
   inputs:
-    scantype: targetedScan
-    threshold: '30'
-    url: 'http://172.17.0.1'
-    port: 8080
-#- task: Bash@3
-#  inputs:
-#    targetType: 'inline'
-#    script: |
-#      chmod -R 777  ./
-#      docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-full-scan.py -t http://172.17.0.1:8080 -g gen.conf -x OWASP-ZAP-Report.xml -r scan-report.html
-#      true
+    targetType: 'inline'
+    script: |
+      chmod -R 777  ./
+      docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://172.17.0.1:8080 -g gen.conf -x OWASP-ZAP-Report.xml -r scan-report.html -l 10
+      true 
+  displayName: OWASP Scan
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
@@ -50,21 +60,35 @@ steps:
       $XslTransform = New-Object System.Xml.Xsl.XslCompiledTransform
       $XslTransform.Load($XslPath)
       $XslTransform.Transform($XmlInputPath, $XmlOutputPath)
+  displayName: Convert result to NUnit type file
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: 'Converted-OWASP-ZAP-Report.xml'
+- task: Npm@1
+  inputs:
+    command: 'install'
+    workingDir: '$(System.DefaultWorkingDirectory)'
+  displayName: Npm install  
+- task: CmdLine@2
+  inputs:
+    script: |
+      wget https://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip
+      unzip chromedriver_linux64.zip
+      sudo mv chromedriver /usr/bin
+      rm chromedriver_linux64.zip
+  displayName: Install Chromedriver      
+- task: CmdLine@2
+  inputs:
+    script: 'npm test'
+  displayName: Run UI test    
 - task: CopyFiles@2
   displayName: 'Copy _site to: $(Build.ArtifactStagingDirectory)'
   inputs:
     SourceFolder: _site
-    TargetFolder: $(Build.ArtifactStagingDirectory)
-- task: CopyFiles@2
-  displayName: 'Copy test script to: $(Build.ArtifactStagingDirectory)'
-  inputs:
-    SourceFolder: test
     TargetFolder: $(Build.ArtifactStagingDirectory)    
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   inputs:
-    ArtifactName: drop
+    ArtifactName: drop    
+
