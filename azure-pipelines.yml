@@ -15,10 +15,10 @@ steps:
     gem install bundler
     bundle update jekyll
     bundle install --retry=3 --jobs=4
-  displayName: 'bundle install'
+  displayName: 'Build - bundle install'
 - script: |
     jekyll build
-  displayName: 'Jekyll build'
+  displayName: 'Build - Jekyll build'
 - task: SonarCloudPrepare@1
   inputs:
     SonarCloud: 'Sonarcloud'
@@ -28,23 +28,28 @@ steps:
     cliProjectKey: 'sgds-demo-1'
     cliProjectName: 'sgds'
     cliSources: '.'
+  displayName: 'SAST - SonarCloud Prepare'  
 - task: SonarCloudAnalyze@1
+  displayName: 'SAST - SonarCloud Analyze'
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
+  displayName: 'SAST - SonarCloud Publish'  
 - task: sonarcloud-buildbreaker@2
   inputs:
     SonarCloud: 'Sonarcloud'
     organization: 'ustdigital'
+  displayName: 'SAST - SonarCloud Breaker'  
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
+  displayName: 'DAST - Install Docker'    
 - script: |
     chmod -R 777 $(pwd)/_site
     docker run --rm --volume="$(pwd)/_site:/usr/local/apache2/htdocs" -p 8080:80 -dit httpd:2.4
     netstat -tlpen | grep 8080
     curl -v http://172.17.0.1:8080 --retry 3
-  displayName: Deploy to local  
+  displayName: 'DAST - Deploy to Docker Container'
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -52,7 +57,7 @@ steps:
       chmod -R 777  ./
       docker run --rm -v $(pwd):/zap/wrk/:rw -t owasp/zap2docker-stable zap-baseline.py -t http://172.17.0.1:8080 -g gen.conf -x OWASP-ZAP-Report.xml -r scan-report.html
       true 
-  displayName: OWASP Scan
+  displayName: 'DAST - OWASP Scan'
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
@@ -63,11 +68,12 @@ steps:
       $XslTransform = New-Object System.Xml.Xsl.XslCompiledTransform
       $XslTransform.Load($XslPath)
       $XslTransform.Transform($XmlInputPath, $XmlOutputPath)
-  displayName: Convert result to NUnit type file
+  displayName: 'DAST - Convert Report to NUnit type file'
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'NUnit'
     testResultsFiles: 'Converted-OWASP-ZAP-Report.xml'
+  displayName: 'DAST - Publish Report'  
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '3.x'
