@@ -4,7 +4,7 @@ description: >-
   visual language  and user experience
 navbar_border_color: primary
 navbar_button_color: primary
-navbar_button_type: primary
+navbar_button_type: outlined
 breadcrumb_background: primary
 home_intro_background_color: primary
 home_intro_button_color: primary
